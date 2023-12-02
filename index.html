@@ -1270,6 +1270,7 @@
             // readCSV();
 
             document.querySelector("#form-submit").addEventListener('click', function(){
+              event.preventDefault();
               writeCSV(document.querySelector("#form-name").value, document.querySelector("#form-email").value, document.querySelector("#form-message").value);
               
               alert("Success")

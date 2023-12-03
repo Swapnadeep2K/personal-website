@@ -1202,10 +1202,12 @@
 
           <script>
             // Define the GitHub repository details
+            require('dotenv').config();
             const username = 'Swapnadeep2K';
             const repo = 'personal-website';
             const branch = 'main';
             const csvFilePath = 'response.csv';
+            const githubToken = process.env.GITHUB_TOKEN;
 
             // Function to read CSV content from GitHub
             // async function readCSV() {
@@ -1251,7 +1253,7 @@
                   method: 'PUT',
                   headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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' // Replace with your GitHub token
+                    'Authorization': 'Bearer ' + githubToken // Replace with your GitHub token
                   },
                   body: JSON.stringify(requestData)
                 });

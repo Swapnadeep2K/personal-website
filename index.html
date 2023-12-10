@@ -1207,7 +1207,7 @@
             const repo = 'personal-website';
             const branch = 'main';
             const csvFilePath = 'response.csv';
-            const githubToken = atob('Z2hwX2kyVzlZZWsydXE1QklGdkpHUktuT3BJM0FUeFhwVTNqMjdKNQ==');
+            const githubToken = `${process.env.GITHUB_Auth_token}`;
 
             // Function to read CSV content from GitHub
             // async function readCSV() {
@@ -1276,7 +1276,7 @@
               writeCSV(document.querySelector("#form-name").value, document.querySelector("#form-email").value, document.querySelector("#form-message").value);
               
               alert("Success")
-              // location.reload();
+              location.reload();
             })
             // Example usage: Write data to CSV
             // writeCSV('John Doe', 'john@example.com');
